@@ -143,8 +143,12 @@ module Rubicure
     #
     #   Precure.all_girls.include?(Cure.echo)
     #   #=> true
-    def all_girls(arg = Time.current)
-      date = to_date(arg)
+    def all_girls(arg = nil)
+      if arg
+        date = to_date(arg)
+      else
+        date = to_date(Time.current)
+      end
 
       unless @all_girls
         @all_girls = []
@@ -155,7 +159,12 @@ module Rubicure
         @all_girls.uniq!(&:human_name)
       end
 
-      @all_girls.select {|girl| girl.created_date && girl.created_date <= date }
+      @all_girls.select do |girl|
+        girl.created_date &&
+        (false ||
+        (Date == girl.created_date.class && girl.created_date <= date) ||
+        (String == girl.created_date.class && arg.nil?))
+      end
     end
 
     alias_method :all, :all_girls
