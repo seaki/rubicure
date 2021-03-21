@@ -65,7 +65,11 @@ cure_papaya: &cure_papaya
   transform_message: |-
     プリキュア！トロピカルチェンジ！
     レッツメイク！キャッチ！
-    TODO
+    チーク！
+    リップ！
+    ヘアー！
+    アイズ！
+    ドレス！
     ひらめく果実！キュアパパイア！
   # extra_names:
   attack_messages:
@@ -84,7 +88,7 @@ cure_flamingo: &cure_flamingo
   precure_name: キュアフラミンゴ
   cast_name:    瀬戸麻沙美
   color:        red
-  created_date: 2021-XX-XX # episode XX
+  created_date: 2021-03-28 # episode 5
   birthday:     10/15
   transform_message: |-
     プリキュア！トロピカルチェンジ！
